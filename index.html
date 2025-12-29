@@ -41,6 +41,20 @@
 		c.src = "//c.retailcrm.tech/widget/loader.js";
 		a.appendChild(c);
 	}(document);
+
+	(function onOcapiReady() {
+		window.ocapi.on('load', () => {
+			console.log('Consultant has been loaded!');
+		});
+		window.ocapi.on('contact_form', (event
+		) => {
+			console.log('Event contact_form!', JSON.stringify(event));
+		});
+		window.ocapi.on('offline_form', (event
+		) => {
+			console.log('Event offline_form!', JSON.stringify(event));
+		});
+	})();
 </script>
 </body>
 </html>
