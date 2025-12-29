@@ -42,7 +42,7 @@
 		a.appendChild(c);
 	}(document);
 
-	(function onOcapiReady() {
+	function onOcapiReady() {
 		window.ocapi.on('load', () => {
 			console.log('Consultant has been loaded!');
 		});
@@ -54,7 +54,16 @@
 		) => {
 			console.log('Event offline_form!', JSON.stringify(event));
 		});
-	})();
+	}
+
+	const intervalWaitingOcapi = setInterval(function() {
+		if (window.ocapi) {
+            onOcapiReady();
+
+			clearInterval(intervalWaitingOcapi);
+		}
+
+	}, 1000);
 </script>
 </body>
 </html>
