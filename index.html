@@ -62,7 +62,8 @@
 		const cookies = getCookies();
 		const mgo_uid = cookies['mgo_uid'];
 		if (mgo_uid) {
-			result.push(`custom_data=[${encodeURI("mgo_uid:${mgo_uid}")}]`);
+			const item = encodeURI(`"mgo_uid:${mgo_uid}"`);
+			result.push(`custom_data=[${item}]`);
 		}
 
 		const phone = event.data.phone;
