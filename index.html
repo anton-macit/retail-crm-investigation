@@ -59,7 +59,7 @@
 		const result = [];
 		result.push(`webhooktype=${type === 'online' ? 12 : 8}`);
 
-		result.push(`custom_data=${JSON.encode([])}`);
+		result.push(`custom_data=${JSON.stringify([])}`);
 
 		/*
                 const cookies = getCookies();
