@@ -64,7 +64,7 @@
         const cookies = getCookies();
         const mgo_uid = cookies['mgo_uid'];
         if (mgo_uid) {
-	        const custom_data = ["mgo_uid:${mgo_uid}"];
+	        const custom_data = [`mgo_uid:${mgo_uid}`];
 	        result.push(`custom_data=${encodeURI(JSON.stringify(custom_data))}`);
 			result.push(`uid=${mgo_uid}`);
         }
