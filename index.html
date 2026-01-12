@@ -62,7 +62,7 @@
 		const cookies = getCookies();
 		const mgo_uid = cookies['mgo_uid'];
 		if (mgo_uid) {
-			result.push(`custom_data=['mgo_uid:${mgo_uid}']`);
+			result.push(`custom_data=["mgo_uid:${mgo_uid}"]`);
 		}
 
 		const phone = event.data.phone;
