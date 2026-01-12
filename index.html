@@ -51,7 +51,7 @@
 	}
 
 	function objectToArray(obj, prefix="") {
-		const result = {};
+		const result = [];
 		for (let key in obj) {
 			if (obj.hasOwnProperty(key)) { // Проверка на "собственное" свойство
 				let property = obj[key];
