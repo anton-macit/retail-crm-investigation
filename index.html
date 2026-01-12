@@ -100,9 +100,9 @@
 
 	const intervalWaitingOcapi = setInterval(function() {
 		if (window.ocapi) {
-            onOcapiReady();
-
 			clearInterval(intervalWaitingOcapi);
+
+            onOcapiReady();
 		}
 
 	}, 500);
