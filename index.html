@@ -113,7 +113,7 @@
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
-			body: JSON.stringify(formattedEvent.join(";"))
+			body: JSON.stringify(formattedEvent.join("&"))
 		})
 			.then(response => response.json()) // Parse the JSON response from the server
 			.then(data => console.log('Result: ', JSON.stringify(data))) // Log the response data
