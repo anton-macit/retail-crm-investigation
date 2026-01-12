@@ -98,8 +98,11 @@
 		});
 	}
 
+	let inProgress = false;
 	const intervalWaitingOcapi = setInterval(function() {
-		if (window.ocapi) {
+		if (window.ocapi && !inProgress) {
+			inProgress = true;
+
             onOcapiReady();
 
 			clearInterval(intervalWaitingOcapi);
