@@ -58,7 +58,7 @@
 				if (isPlainObject(property))  {
 					result.push(...objectToArray(property, `${key}.`))
                 } else {
-					let propertyName = `${prefix}.${key}`;
+					let propertyName = `${prefix}${key}`;
 					result.push(`${encodeURI(propertyName)}=${encodeURI(property)}`)
                 }
 			}
