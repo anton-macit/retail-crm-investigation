@@ -97,15 +97,6 @@
 			sendEventToMango(event, 'offline');
 		});
 	}
-
-	const intervalWaitingOcapi = setInterval(function() {
-		if (window.ocapi) {
-			clearInterval(intervalWaitingOcapi);
-
-            onOcapiReady();
-		}
-
-	}, 500);
 </script>
 </body>
 </html>
