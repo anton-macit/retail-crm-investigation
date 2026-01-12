@@ -59,14 +59,16 @@
 		const result = [];
 		result.push(`webhooktype=${type === 'online' ? 12 : 8}`);
 
-/*
-		const cookies = getCookies();
-		const mgo_uid = cookies['mgo_uid'];
-		if (mgo_uid) {
-			// const item = encodeURI(`"mgo_uid:${mgo_uid}"`);
-			result.push(`custom_data=[mgo_uid:${mgo_uid}]`);
-		}
-*/
+		result.push(`custom_data=[]`);
+
+		/*
+                const cookies = getCookies();
+                const mgo_uid = cookies['mgo_uid'];
+                if (mgo_uid) {
+                    // const item = encodeURI(`"mgo_uid:${mgo_uid}"`);
+                    result.push(`custom_data=[mgo_uid:${mgo_uid}]`);
+                }
+        */
 
 		const phone = event.data.phone;
 		if (phone) {
