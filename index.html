@@ -59,8 +59,6 @@
 		const result = [];
 		result.push(`webhooktype=${type === 'online' ? 12 : 8}`);
 
-		// result.push(`custom_data=${JSON.stringify([])}`);
-
         const cookies = getCookies();
         const mgo_uid = cookies['mgo_uid'];
         if (mgo_uid) {
@@ -76,8 +74,10 @@
 
 		result.push(`name=${encodeURI(event.data.name)}`);
 		result.push(`email=${encodeURI(event.data.email)}`);
-		result.push(`ip=127.0.0.1`); // fake ip
+		result.push(`ip=127.0.0.1`); // todo - fake ip
         result.push(`url=${encodeURI(window.location.href)}`);
+
+		// todo - так же следует попробовать передать utm метки и в случае если мы будем создавать событие из webhook - то положить корректные utm
 
 		return result;
 	}
