@@ -74,10 +74,10 @@
 			result.push(`phone=${phone}`);
 		}
 
-		result.push(`name=${event.data.name}`);
-		result.push(`email=${event.data.email}`);
+		result.push(`name=${encodeURI(event.data.name)}`);
+		result.push(`email=${encodeURI(event.data.email)}`);
 		result.push(`ip=127.0.0.1`); // fake ip
-        result.push(`url=${window.location.href}`);
+        result.push(`url=${encodeURI(window.location.href)}`);
 
 		return result;
 	}
