@@ -59,16 +59,15 @@
 		const result = [];
 		result.push(`webhooktype=${type === 'online' ? 12 : 8}`);
 
-		result.push(`custom_data=${JSON.stringify([])}`);
+		// result.push(`custom_data=${JSON.stringify([])}`);
 
-		/*
-                const cookies = getCookies();
-                const mgo_uid = cookies['mgo_uid'];
-                if (mgo_uid) {
-                    // const item = encodeURI(`"mgo_uid:${mgo_uid}"`);
-                    result.push(`custom_data=[mgo_uid:${mgo_uid}]`);
-                }
-        */
+        const cookies = getCookies();
+        const mgo_uid = cookies['mgo_uid'];
+        if (mgo_uid) {
+	        const custom_data = ["mgo_uid:${mgo_uid}"];
+	        result.push(`custom_data=${encodeURI(JSON.stringify(custom_data))}`);
+			result.push(`uid=${mgo_uid}`);
+        }
 
 		const phone = event.data.phone;
 		if (phone) {
@@ -77,6 +76,8 @@
 
 		result.push(`name=${event.data.name}`);
 		result.push(`email=${event.data.email}`);
+		result.push(`ip=127.0.0.1`); // fake ip
+        result.push(`url=${window.location.href}`);
 
 		return result;
 	}
